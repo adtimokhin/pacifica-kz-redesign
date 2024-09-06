@@ -1,0 +1,23 @@
+---
+import ProperImage from "../image/ProperImage.astro";
+import SmallButton from "../navigation/SmallButton.astro";
+let {title, description, iNeedButton, imageDest, imageAlt} = Astro.props;
+---
+
+<!-- TODO: Add the image background -->
+
+<div class="w-full h-full rounded-3xl flex flex-col justify-between items-center px-8 py-6 bg-black text-white relative overflow-hidden">
+    <!-- Main Content -->
+    <div class="flex gap-y-4 flex-col items-center z-20">
+        <h4 class="min-h-[7.3125rem] text-center">{title}</h4>
+        <p class="text-center">{description}</p>
+    </div>
+
+    <div class="z-20">
+        <!-- Conditional navigation button -->
+        {iNeedButton &&  <SmallButton/>}
+    </div>
+
+    <!-- Background Image -->
+     {imageDest && <div class="w-full h-full absolute top-0 left-0 rounded-3xl z-10"><ProperImage  imagePath={imageDest} altText={imageAlt}/></div>}
+</div>

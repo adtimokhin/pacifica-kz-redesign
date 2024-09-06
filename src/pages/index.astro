@@ -1,16 +1,163 @@
 ---
+// Fonts for the project
+import '@fontsource-variable/inter';
+import '@fontsource/yeseva-one';
 
+import "../css/global.css"
+
+import MainButton from '../components/navigation/MainButton.astro';
+import MainCard from '../components/card/MainCard.astro';
+import Navbar from '../components/Navbar.astro';
+import ProperEagerImage from "../components/image/ProperEagerImage.astro"
+import SectionTitle from '../components/SectionTitle.astro';
+import SecondaryButton from '../components/navigation/SecondaryButton.astro';
+import SmallInputField from '../components/form/SmallInputField.astro';
+import LargeInputField from '../components/form/LargeInputField.astro';
+import Footer from '../components/Footer.astro';
+import ServiceCard from '../components/card/ServiceCard.astro';
+import ProperImage from '../components/image/ProperImage.astro';
 ---
-
-<html lang="en">
+<html lang="ru-ru">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>PACIFICA.KZ - Кибербезопасность для вашего бизнеса</title>
+
+		<!-- CDNs -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body class="flex flex-col justify-center items-center">
+		<Navbar/>
+		<main class="w-[1200px] h-fit flex flex-col justify-center items-center gap-y-[7rem]">
+			<!-- Hero -->
+			<section class="w-screen h-screen flex flex-row justify-evenly gap-x-2">
+				<div class="h-full bg-black w-1/2 flex flex-1 justify-center items-center">
+					<!-- Imagery goes into here -->
+					 <!-- TODO: Make this image into vector so that it can be animated in the future -->
+					  <div class="w-full h-[80%]">
+						<ProperEagerImage altText="lines" imagePath="/src/assets/heroImage.png"/>
+					  </div>
+				</div>
+				<div class="h-full w-1/2">
+					<div class="w-full h-full flex flex-col flex-1 justify-center items-start gap-y-10">
+						<h1> <span class="accent">КИБЕРБЕЗОПАСНОСТЬ <br/></span> ДЛЯ ВАШЕГО БИЗНЕСА В .KZ</h1>
+						<div class="w-[70%]">
+							<MainButton title="Cвязаться"/>	
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="w-full">
+				<SectionTitle text="Продукты" number="01"/>
+				<div class="flex flex-row justify-center gap-x-5">
+					<div class="w-[400px] h-[600px]">
+						<MainCard title="Безопасность приложений" description="Решение обеспечивает защиту веб- и мобильных приложений от уязвимостей, кибератак и несанкционированного доступа." iNeedButton={true} imageDest="/src/assets/cards/bg1.png" imageAlt="triangle"/>
+					</div>
+					<div class="w-[400px] h-[600px]">
+						<MainCard title="Защита от утечек данных" description="Системы мониторинга и аналитики выявляют подозрительные действия в реальном времени, защищая данные на всех уровнях организации." iNeedButton={true} imageDest="/src/assets/cards/bg2.png" imageAlt="lines"/>
+					</div>
+					<div class="w-[400px] h-[600px]">
+						<div class="w-full h-full flex flex-col justify-between gap-y-10">
+							<MainCard title="Система интернет разведки" description="Платформа анализирует открытые источники для выявления киберугроз и утечек, обеспечивая проактивную защиту." iNeedButton={true} imageDest="/src/assets/cards/bg3.png" imageAlt="traingle"/>
+							<SecondaryButton title="Остальные"/>
+						</div>
+					</div>
+				</div>
+			</section>
+
+
+			<section class="w-full">
+				<div class="w-full flex flex-row justify-center">
+					<div class="w-1/2 h-screen  sticky top-0">
+						<!-- TODO: Add this section slightly later -->
+					</div>
+					<div class="w-1/2 h-fit flex flex-col items-start">
+						<SectionTitle text="Проекты" number="02"/>
+						
+						<div class="w-full flex flex-col gap-y-[80px]">
+							<!-- Project Cards -->
+							<div class="w-full h-[550px]">
+								<MainCard title="НАК Казатомпром" iNeedButton={false} imageDest="/src/assets/cards/bg4.png" imageAlt="triangles"/>
+							</div>
+							<div class="w-full h-[550px]">
+								<MainCard title="Казахстан темир жолы" iNeedButton={false} imageDest="/src/assets/cards/bg5.png" imageAlt="trapesoid"/>
+						</div>
+						<div class="w-full h-[550px]">
+							<MainCard title="Halyk Банк" iNeedButton={false} imageDest="/src/assets/cards/bg6.png" imageAlt="triangle"/>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="w-full flex flex-row justify-center pt-12">
+					<div class="w-[40%]">
+						<SecondaryButton title="Все проекты"/>
+					</div>
+				</div>
+			</section>
+
+			<section class="w-full">
+				<SectionTitle text="Услуги" number="03"/>
+
+
+				<!-- TODO: finish the custom interaction later -->
+				<div class="flex flex-row w-full h-fit">
+					<ServiceCard title="Система интернет разведки" description="Платформа анализирует открытые источники для выявления киберугроз и утечек, обеспечивая проактивную защиту."/>
+					<ServiceCard title="Система интернет разведки" description="Платформа анализирует открытые источники для выявления киберугроз и утечек, обеспечивая проактивную защиту."/>
+					<ServiceCard title="Система интернет разведки" description="Платформа анализирует открытые источники для выявления киберугроз и утечек, обеспечивая проактивную защиту."/>
+					<ServiceCard title="Система интернет разведки" description="Платформа анализирует открытые источники для выявления киберугроз и утечек, обеспечивая проактивную защиту."/>
+				</div>
+				
+			</section>
+
+			<section class="w-full">
+				<SectionTitle text="Партнеры" number="04"/>
+				<p>Skip for now</p>
+			</section>
+
+			<section class="w-full">
+				<SectionTitle text="Медиа" number="05"/>
+				<div class="flex flex-row justify-center gap-x-5">
+					<div class="w-[550px] h-[800px] flex flex-col justify-between gap-y-5">
+						<MainCard title="PACIFICA - TOP IBM Guardium Business Partner" iNeedButton={true} imageDest="/src/assets/cards/bg10.png" imageAlt="triangle"/>
+						<MainCard title="Безопасность приложений" iNeedButton={true} imageDest="/src/assets/cards/bg11.png" imageAlt="triangle"/>
+					</div>
+					<div class="w-[550px] h-[800px] flex flex-col justify-between gap-y-5">
+						<MainCard title="Безопасность приложений" iNeedButton={true} imageDest="/src/assets/cards/bg12.png" imageAlt="triangle"/>
+						<div class="flex flex-col justify-between gap-y-5">
+							<MainCard title="Система интернет разведки" iNeedButton={true} imageDest="/src/assets/cards/bg13.png" imageAlt="triangle"/>
+							<SecondaryButton title="Все новости"/>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="w-full h-screen flex flex-row justify-evenly gap-x-2">
+				<div class="h-full w-1/2 flex flex-1 justify-center items-center">
+					<!-- Imagery goes into here -->
+					 <!-- TODO: Make this image into vector so that it can be animated in the future -->
+					  <div class="w-full h-[80%]">
+						<ProperImage altText="lines" imagePath="/src/assets/heroImage.png"/>
+					  </div>
+				</div>
+				<div class="h-full w-1/2">
+					<SectionTitle text="Медиа" number="06"/>
+					<form class="w-full flex flex-col gap-y-10 items-center justify-center">
+						<SmallInputField placeholder="Имя *" inputName="name" inputType="text"></SmallInputField>
+						<SmallInputField placeholder="Почта *" inputName="email" inputType="email"></SmallInputField>
+						<SmallInputField placeholder="Телефон *" inputName="telephone" inputType="tel"></SmallInputField>
+						<LargeInputField placeholder="Опишите свой проект *" inputName="description"/>
+						<div class="w-[60%]">
+							<MainButton title="Отправить"/>
+						</div>
+					</form>
+				</div>
+			</section>
+		</main>
+		<Footer/>
 	</body>
 </html>
+

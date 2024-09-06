@@ -1,0 +1,17 @@
+---
+import SmallButton from "../navigation/SmallButton.astro";
+let {title, description, imageDest, imageAlt} = Astro.props;
+---
+
+<!-- TODO: Add the image background -->
+
+<div class="w-[600px] h-[600px] flex flex-col justify-between items-start px-8 py-6 bg-black text-white border-white border-2">
+    <!-- Main Content -->
+    <div class="flex gap-y-4 flex-col items-start">
+        <h4 class="min-h-[7.3125rem] text-center">{title}</h4>
+        <p class="text-center">{description}</p>
+    </div>
+
+    <!-- Conditional navigation button -->
+    <SmallButton/>
+</div>
