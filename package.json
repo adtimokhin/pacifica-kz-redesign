@@ -14,6 +14,7 @@
     "@fontsource-variable/inter": "^5.0.20",
     "@fontsource/yeseva-one": "^5.0.21",
     "astro": "^4.15.3",
+    "astro-icon": "^1.1.1",
     "sass": "^1.78.0",
     "tailwindcss": "^3.4.10"
   }

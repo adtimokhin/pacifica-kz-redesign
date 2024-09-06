@@ -3,6 +3,8 @@
 import '@fontsource-variable/inter';
 import '@fontsource/yeseva-one';
 
+import {Icon} from "astro-icon/components"
+
 import "../css/global.css"
 
 import MainButton from '../components/navigation/MainButton.astro';
@@ -16,6 +18,7 @@ import LargeInputField from '../components/form/LargeInputField.astro';
 import Footer from '../components/Footer.astro';
 import ServiceCard from '../components/card/ServiceCard.astro';
 import ProperImage from '../components/image/ProperImage.astro';
+
 ---
 <html lang="ru-ru">
 	<head>
@@ -139,7 +142,37 @@ import ProperImage from '../components/image/ProperImage.astro';
 
 			<section class="w-full">
 				<SectionTitle text="Партнеры" number="04"/>
-				<p>Skip for now</p>
+				<div class="w-full h-[50vh] grid grid-cols-9 grid-rows-4 gap-4">
+					<div class="col-span-1 row-span-4 border-2 border-black rounded-3xl flex flex-col justify-center items-center gap-y-1">
+						<Icon name="ibm" size={100}/>
+					</div>
+					<div class="col-span-2 col-start-2 row-span-3 border-2 border-black rounded-3xl flex flex-col justify-center items-center gap-y-1">
+						<Icon name="eset" size={100}/>
+					</div>
+					<div class="col-span-2 col-start-2 row-span-1 border-2 border-black rounded-3xl flex flex-col justify-center items-center gap-y-1">
+						<Icon name="ptsecurity" size={200}/>
+					</div>
+					<div class="col-span-2 col-start-4 row-start-1 row-span-2 border-2 border-black rounded-3xl flex flex-col justify-center items-center gap-y-2">
+						<Icon name="tenable" size={200}/>
+					</div>
+					<div class="col-span-2 col-start-4 row-start-3 row-span-2 border-2 border-black rounded-3xl flex flex-col justify-center items-center gap-y-2">
+						<Icon name="trellix" size={200}/>
+					</div>
+					<div class="col-span-2 col-start-6 row-start-1 row-span-3 border-2 border-black rounded-3xl flex flex-col justify-center items-center gap-y-2">
+						<Icon name="avanpost" size={200}/>
+					</div>
+					<div class="col-span-1 col-start-6 row-start-4 row-span-1 border-2 border-black rounded-3xl flex flex-col justify-center items-center gap-y-2">
+						<Icon name="crowdstrike" size={80}/>
+					</div>
+					<div class="col-span-2 col-start-8 row-start-1 row-span-3 border-2 border-black rounded-3xl flex flex-col justify-center items-center gap-y-2">
+						<Icon name="ib" size={200}/>
+					</div>
+
+					<div class="col-span-3 col-start-7 row-start-4 row-span-1 flex flex-col justify-center items-center">
+						<SecondaryButton title="Остальные"/> 
+					</div>
+
+				</div>
 			</section>
 
 			<section class="w-full">
