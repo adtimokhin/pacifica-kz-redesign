@@ -1,10 +1,14 @@
 ---
+import DropText from "./animation/DropText.astro";
+
 const {text, number} = Astro.props;
 ---
 
 <span class="flex flex-row justify-center items-center h-fit">
     <span class="font-[100] text-[100px]" style="font-family: 'Inter' sans-serif;">(</span>
-    <h2>{text}</h2>
+    <DropText>
+        <h2>{text}</h2>
+    </DropText>
     <span class="font-[100] text-[100px]" style="font-family: 'Inter' sans-serif;">)</span>
     <h3 class="self-stretch"><sup>{number}</sup></h3>
 </span>
