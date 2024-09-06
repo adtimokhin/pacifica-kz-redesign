@@ -8,7 +8,10 @@ export default {
 			},
 			transitionTimingFunction: {
 				easeOutQuart: "cubic-bezier(0.25, 1, 0.5, 1)"
-			}
+			},
+			clipPath: {
+				'half-clip': 'polygon(0 0, 50% 0, 50% 100%, 0% 100%)',
+			  }
 		},
 	},
 	plugins: [],

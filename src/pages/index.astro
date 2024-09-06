@@ -6,6 +6,7 @@ import '@fontsource/yeseva-one';
 import {Icon} from "astro-icon/components"
 
 import "../css/global.css"
+import "../css/service-cards.css"
 
 import MainButton from '../components/navigation/MainButton.astro';
 import MainCard from '../components/card/MainCard.astro';
@@ -126,18 +127,24 @@ import ProperImage from '../components/image/ProperImage.astro';
 				</div>
 			</section>
 
-			<section class="w-full">
+			<section class="w-full h-screen">
 				<SectionTitle text="Услуги" number="03"/>
-
-
-				<!-- TODO: finish the custom interaction later -->
-				<div class="flex flex-row w-full h-fit">
-					<ServiceCard title="Система интернет разведки" description="Платформа анализирует открытые источники для выявления киберугроз и утечек, обеспечивая проактивную защиту."/>
-					<ServiceCard title="Система интернет разведки" description="Платформа анализирует открытые источники для выявления киберугроз и утечек, обеспечивая проактивную защиту."/>
-					<ServiceCard title="Система интернет разведки" description="Платформа анализирует открытые источники для выявления киберугроз и утечек, обеспечивая проактивную защиту."/>
-					<ServiceCard title="Система интернет разведки" description="Платформа анализирует открытые источники для выявления киберугроз и утечек, обеспечивая проактивную защиту."/>
-				</div>
-				
+				 <div class="w-[1200px] justify-center h-fit">
+					<div class="relative w-full h-fit">
+						<div class="absolute top-0 left-0 service-card__conatiner z-10">
+							<ServiceCard title="Экспресс-анализ защищенности корпоративной сети" description="Быстрая проверка уровня безопасности вашей сети с выявлением критических уязвимостей. Помогаем оперативно устранить угрозы и минимизировать риски кибератак." imageDest="/src/assets/cards/bg7.png" imageAlt="lines"/>
+						</div>
+						<div class="absolute top-0 left-[16.7%] service-card__conatiner z-20">
+							<ServiceCard title="Разработка документации по обеспечению ИБ" description="Создаем полный пакет документов по информационной безопасности, соответствующий стандартам и требованиям вашей компании. Документация включает в себя инструкции, политики и регламенты для защиты данных и минимизации рисков." imageDest="/src/assets/cards/bg8.png" imageAlt="line of triangles"/>
+						</div>
+						<div class="absolute top-0 left-[33.3%] service-card__conatiner z-30">
+							<ServiceCard title="Подготовка к сертификации по стандартам ISO" description="Помогаем вашей компании соответствовать требованиям международных стандартов безопасности ISO. Осуществляем аудит, разрабатываем необходимые документы и сопровождаем на всех этапах сертификации." imageDest="/src/assets/cards/bg9.png" imageAlt="trapezoid"/>
+						</div>
+						<div class="absolute top-0 left-[50%] z-40 service-card__conatiner">
+							<ServiceCard title="Технический Аудит" description="Проводим комплексную проверку информационных систем для выявления уязвимостей и оценки их безопасности. Наши специалисты предоставляют рекомендации по устранению рисков и улучшению защиты данных." imageDest="/src/assets/cards/bg_idk_how_to_count.png" imageAlt="triangle"/>
+						</div>
+					</div>
+				 </div>
 			</section>
 
 			<section class="w-full">
@@ -217,6 +224,7 @@ import ProperImage from '../components/image/ProperImage.astro';
 		<Footer/>
 
 		<script src="../js/projects-animation"/>
+		<script src="../js/services-animation"/>
 	</body>
 </html>
 

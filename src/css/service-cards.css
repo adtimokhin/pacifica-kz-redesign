@@ -1,0 +1,12 @@
+.selected-card{
+    clip-path: polygon(0,0,100%,0,100%,0,0,100%);
+    z-index: 10000;
+}
+
+.unselected-card__l{
+    clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%)
+}
+
+.unselected-card__r{
+    clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+}
