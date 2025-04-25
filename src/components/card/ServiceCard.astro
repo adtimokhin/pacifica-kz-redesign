@@ -7,12 +7,12 @@ let {title, description, imageDest, imageAlt} = Astro.props;
 
 <!-- TODO: Add the image background -->
 
-<div class="w-[600px] h-[600px] relative px-8 py-6 bg-black text-white border-white border-2 overflow-hidden z-50 test">
+<div class="desktop:w-[600px] tablet:w-[350px] h-[600px] relative px-8 py-6 bg-black text-white border-white border-2 overflow-hidden z-50 test">
     <!-- Main Content -->
-     <div class="absolute top-0 left-0 w-[600px] px-8 py-6 z-20">
+     <div class="absolute top-0 left-0 desktop:w-[600px] tablet:w-[350px] px-8 py-6 z-20">
         <div class="flex gap-y-4 flex-col items-start">
             <h4 class="min-h-[7.3125rem] text-left w-[95%]">{title}</h4>
-            <p class="text-left w-[75%]">{description}</p>
+            <p class="text-left w-[75%] desktop:opacity-100 tablet:opacity-80">{description}</p>
         </div>
     </div>
     <div class="absolute bottom-0 left-0 w-[600px] px-8 py-6 z-20">

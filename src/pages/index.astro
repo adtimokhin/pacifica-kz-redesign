@@ -20,6 +20,7 @@ import Footer from '../components/Footer.astro';
 import ServiceCard from '../components/card/ServiceCard.astro';
 import ProperImage from '../components/image/ProperImage.astro';
 import DropText from '../components/animation/DropText.astro';
+import ProjectCard from '../components/card/ProjectCard.astro';
 
 ---
 <html lang="ru-ru">
@@ -34,9 +35,9 @@ import DropText from '../components/animation/DropText.astro';
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/ScrollTrigger.min.js" defer></script>	
 	</head>
-	<body class="flex flex-col justify-center items-center">
-		<Navbar/>
-		<main class="w-[1200px] h-fit flex flex-col justify-center items-center gap-y-[7rem]">
+	<body class="flex flex-col justify-center items-center overflow-x-hidden">
+		<!-- <Navbar/> -->
+		<main class="desktop:w-[1200px] tablet:w-[700px] h-fit flex flex-col justify-center items-center gap-y-[15rem]">
 			<!-- Hero -->
 			<section class="w-screen h-screen flex flex-row justify-evenly gap-x-2">
 				<div class="h-full bg-black w-1/2 flex flex-1 justify-center items-center">
@@ -58,14 +59,16 @@ import DropText from '../components/animation/DropText.astro';
 
 			<section class="w-full">
 				<SectionTitle text="Продукты" number="01"/>
-				<div class="flex flex-row justify-center gap-x-5">
-					<div class="w-[400px] h-[600px]">
-						<MainCard title="Безопасность приложений" description="Решение обеспечивает защиту веб- и мобильных приложений от уязвимостей, кибератак и несанкционированного доступа." iNeedButton={true} imageDest="/src/assets/cards/bg1.png" imageAlt="triangle"/>
+				<div class="flex tablet:flex-col desktop:flex-row justify-center items-center gap-5">
+					<div class="flex flex-row justify-center items-center gap-x-5">
+						<div class="w-[340px] h-[600px]">
+							<MainCard title="Безопасность приложений" description="Решение обеспечивает защиту веб- и мобильных приложений от уязвимостей, кибератак и несанкционированного доступа." iNeedButton={true} imageDest="/src/assets/cards/bg1.png" imageAlt="triangle"/>
+						</div>
+						<div class="w-[340px] h-[600px]">
+							<MainCard title="Защита от утечек данных" description="Системы мониторинга и аналитики выявляют подозрительные действия в реальном времени, защищая данные на всех уровнях организации." iNeedButton={true} imageDest="/src/assets/cards/bg2.png" imageAlt="lines"/>
+						</div>
 					</div>
-					<div class="w-[400px] h-[600px]">
-						<MainCard title="Защита от утечек данных" description="Системы мониторинга и аналитики выявляют подозрительные действия в реальном времени, защищая данные на всех уровнях организации." iNeedButton={true} imageDest="/src/assets/cards/bg2.png" imageAlt="lines"/>
-					</div>
-					<div class="w-[400px] h-[600px]">
+					<div class="w-[340px] h-[600px]">
 						<div class="w-full h-full flex flex-col justify-between gap-y-10">
 							<MainCard title="Система интернет разведки" description="Платформа анализирует открытые источники для выявления киберугроз и утечек, обеспечивая проактивную защиту." iNeedButton={true} imageDest="/src/assets/cards/bg3.png" imageAlt="traingle"/>
 							<SecondaryButton title="Остальные"/>
@@ -77,7 +80,8 @@ import DropText from '../components/animation/DropText.astro';
 
 			<section class="w-full">
 				<div class="w-full flex flex-row justify-center gap-x-2">
-					<div class="w-1/2 h-screen sticky top-0  flex flex-col justify-center gap-3" id="cards__side-display">
+					<!-- Sidebar with info for desktop screens only -->
+					<div class="tablet:hidden desktop:flex w-1/2 h-screen sticky top-0  flex-col justify-center gap-3 pr-5" id="cards__side-display">
 						<div class="w-full overflow-hidden h-[4rem]" id="cards__side-display__title__container">
 						</div>
 						<div class="w-full grid grid-cols-4 gap-x-4 gap-y-0">
@@ -100,38 +104,39 @@ import DropText from '../components/animation/DropText.astro';
 								</div>
 							</div>
 						</div>
-
 						<SecondaryButton title="Узнать больше"/>
 					</div>
-					<div class="w-1/2 h-fit flex flex-col items-start">
+
+					<!-- Cards -->
+					<div class="tablet:w-full desktop:w-1/2 h-fit flex flex-col desktop:items-start tablet:items-center">
 						<SectionTitle text="Проекты" number="02"/>
 						
-						<div class="w-full flex flex-col gap-y-[120px] pb-[40rem]" id="cards__container">
+						<div class="w-full flex flex-col gap-y-[120px] desktop:pb-[40rem] tablet:pb-[10rem]" id="cards__container">
 							<!-- Project Cards -->
 							<div class="w-full h-[550px] cards__parent">
-								<MainCard title="НАК Казатомпром" iNeedButton={false} imageDest="/src/assets/cards/bg4.png" imageAlt="triangles"/>
+								<ProjectCard title="НАК Казатомпром" description="Совместно с компанией ПАЦИФИКА внедрена система управления информационной безопасности. 1)поставка и техническое сопровождение СУИБ 2)система межсетевого экрана нового поколения 3)система управления доступам к корпоративным ресурсам" imageDest="/src/assets/cards/bg4.png" imageAlt="triangles"/>
 							</div>
 							<div class="w-full h-[550px] cards__parent">
-								<MainCard title="Казахстан темир жолы" iNeedButton={false} imageDest="/src/assets/cards/bg5.png" imageAlt="trapesoid"/>
+								<ProjectCard title="Казахстан темир жолы" description="Совместно с компанией ПАЦИФИКА внедрена система управления информационной безопасности. 1)поставка и техническое сопровождение СУИБ 2)система межсетевого экрана нового поколения 3)система управления доступам к корпоративным ресурсам" imageDest="/src/assets/cards/bg5.png" imageAlt="trapesoid"/>
 							</div>
 							<div class="w-full h-[550px] cards__parent">
-								<MainCard title="Halyk Банк" iNeedButton={false} imageDest="/src/assets/cards/bg6.png" imageAlt="triangle"/>
+								<ProjectCard title="Halyk Банк" description="Совместно с компанией ПАЦИФИКА внедрена система управления информационной безопасности. 1)поставка и техническое сопровождение СУИБ 2)система межсетевого экрана нового поколения 3)система управления доступам к корпоративным ресурсам" imageDest="/src/assets/cards/bg6.png" imageAlt="triangle"/>
 							</div>
 						</div>
 					</div>
 				</div>
-
-				<div class="w-full flex flex-row justify-center pt-12">
-					<div class="w-[40%]">
+<!-- 
+				<div class="w-full flex flex-row justify-center desktop:pt-12 tablet:pt-2">
+					<div class="desktop:w-[40%] tablet:w-[75%]">
 						<SecondaryButton title="Все проекты"/>
 					</div>
-				</div>
+				</div> -->
 			</section>
 
 			<section class="w-full h-screen">
 				<SectionTitle text="Услуги" number="03"/>
-				 <div class="w-[1200px] justify-center h-fit">
-					<div class="relative w-full h-fit">
+				 <div class="desktop:w-[1200px] tablet:w-[700px] justify-center h-fit">
+					<div class="relative w-full h-[600px] overflow-x-hidden">
 						<div class="absolute top-0 left-0 service-card__conatiner z-10">
 							<ServiceCard title="Экспресс-анализ защищенности корпоративной сети" description="Быстрая проверка уровня безопасности вашей сети с выявлением критических уязвимостей. Помогаем оперативно устранить угрозы и минимизировать риски кибератак." imageDest="/src/assets/cards/bg7.png" imageAlt="lines"/>
 						</div>
@@ -150,7 +155,7 @@ import DropText from '../components/animation/DropText.astro';
 
 			<section class="w-full">
 				<SectionTitle text="Партнеры" number="04"/>
-				<div class="w-full h-[50vh] grid grid-cols-9 grid-rows-4 gap-4">
+				<div class="w-full h-[50vh] max-h-[1400px] grid grid-cols-9 grid-rows-4 gap-4">
 					<div class="col-span-1 row-span-4 border-2 border-black rounded-3xl flex flex-col justify-center items-center gap-y-1">
 						<Icon name="ibm" size={100}/>
 					</div>
@@ -200,15 +205,13 @@ import DropText from '../components/animation/DropText.astro';
 				</div>
 			</section>
 
-			<section class="w-full h-screen flex flex-row justify-evenly gap-x-2">
-				<div class="h-full w-1/2 flex flex-1 justify-center items-center">
-					<!-- Imagery goes into here -->
-					 <!-- TODO: Make this image into vector so that it can be animated in the future -->
+			<section class="w-full min-h-[1400px] flex desktop:flex-row tablet:flex-col justify-evenly gap-x-2 gap-y-20">
+				<div class="h-full flex flex-1 justify-center items-center desktop:order-first tablet:order-last">
 					  <div class="w-full h-[80%]">
 						<ProperImage altText="lines" imagePath="/src/assets/heroImage.png"/>
 					  </div>
 				</div>
-				<div class="h-full w-1/2">
+				<div class="h-full flex-1">
 					<SectionTitle text="Связь" number="06"/>
 					<form class="w-full flex flex-col gap-y-10 items-center justify-center">
 						<SmallInputField placeholder="Имя *" inputName="name" inputType="text"></SmallInputField>

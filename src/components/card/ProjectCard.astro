@@ -1,0 +1,37 @@
+---
+/**
+ * 
+ * This is the same component as MainCard, but with one key difference 
+ * related to the scpecial behavior of the project cards
+ * 
+ * They should text about the project for smaller screens, and hide them
+ * for the large screens
+ * 
+ * 
+ * @param {@type String} title - Title of the card
+ * @param {@type String} description - secondary text that goes to the card
+ * @param {@type Boolean} iNeedButton - True if the navigation button is required for the components instance
+ * @param {@type String} imageDest - destination to the image inside the /src/assets folder
+ * @param {@type String} imageAlt - alt for the image
+ */
+
+
+import ProperImage from "../image/ProperImage.astro";
+import SmallButton from "../navigation/SmallButton.astro";
+let {title, description, imageDest, imageAlt} = Astro.props;
+---
+
+<div class="w-full h-full rounded-3xl flex flex-col justify-between items-start px-8 py-6 bg-black text-white relative overflow-hidden">
+    <!-- Main Content -->
+    <div class="flex gap-y-4 flex-col items-start z-20 w-full">
+        <h4 class="min-h-[7.3125rem] w-full desktop:text-center tablet:text-left">{title}</h4>
+        <p class="desktop:hidden flex text-left w-[75%]">{description}</p>
+    </div>
+
+    <div class="z-20 desktop:hidden flex">
+         <SmallButton/>
+    </div>
+
+    <!-- Background Image -->
+     {imageDest && <div class="w-full h-full absolute top-0 left-0 rounded-3xl z-10"><ProperImage  imagePath={imageDest} altText={imageAlt}/></div>}
+</div>

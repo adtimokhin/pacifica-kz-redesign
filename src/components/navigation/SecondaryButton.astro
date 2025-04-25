@@ -3,7 +3,7 @@ import "../../css/main-button.sass";
 const {title} = Astro.props;
 ---
 
-<button class="bg-black px-[12px] py-[10px] w-full flex flex-row justify-between rounded-3xl text-white group">
+<button class="bg-black desktop:px-[12px] desktop:py-[10px] tablet:px-[29px] tablet:py-[20px] w-full flex flex-row justify-between rounded-3xl text-white group">
     <div class="main-button__overflow-container">
         <h3 class="text-white main-button__overflow-text group-hover:-translate-y-full" data-second-title={title}> 
             {title}

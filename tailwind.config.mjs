@@ -11,7 +11,12 @@ export default {
 			},
 			clipPath: {
 				'half-clip': 'polygon(0 0, 50% 0, 50% 100%, 0% 100%)',
-			  }
+			  },
+			  screens: {
+				'phone': '320px',
+				'tablet': '768px',
+				'desktop': '1280px',
+			  },
 		},
 	},
 	plugins: [],

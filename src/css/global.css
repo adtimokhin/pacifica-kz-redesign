@@ -1,58 +1,126 @@
 
-body{
-    color: #000000;
+/* TODO: when turn to .sass, add variables for screen sizes */
+@media only screen and (min-width: 1280px) {
+    body{
+        color: #000000;
+    }
+
+    h1{
+        font-family: "Yeseva One";
+        font-size: 3.75rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 130%;
+    }
+
+    h1 *.accent{
+        color: #0100FF;
+
+        font-family: "Yeseva One";
+        font-size: 3rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 130%; /* 3.9rem */
+    }
+
+    h2 {
+        font-family: "Yeseva One";
+        font-size: 2.5rem;
+        line-height: 150.3%;
+        letter-spacing: -1%;
+    }
+
+    h3{
+        font-family: Inter, sans-serif;
+        font-weight: 500;
+        font-size: 1.5rem;
+    }
+
+    h4 {
+        font-family: "Yeseva One";
+        font-size: 1.875rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    p{
+        font-family: Inter, sans-serif;
+        font-size: 1.125rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+
+    .link-text{
+        font-family: Inter, sans-serif;
+        font-weight: 500;
+        font-size: 1rem;
+    }
+
 }
 
-h1{
-    font-family: "Yeseva One";
-    font-size: 3.75rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 130%;
+@media only screen and (min-width: 768px) and (max-width: 1279px) {
+    body{
+        color: #000000;
+    }
+
+    h1{
+        font-family: "Yeseva One";
+        font-size: 2.5rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 130%;
+    }
+
+    h1 *.accent{
+        color: #0100FF;
+        font-family: "Yeseva One";
+        font-size: 1.8125rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 130%;
+    }
+
+    h2 {
+        font-family: "Yeseva One";
+        font-size: 2.5rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150.298%;
+        letter-spacing: -0.025rem;
+    }
+
+    h3{
+        font-family: Inter, sans-serif;
+        font-size: 1.5rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+
+    h4 {
+        font-family: "Yeseva One";
+        font-size: 1.875rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    p{
+        font-family: Inter, sans-serif;
+        font-size: 1.125rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+
+    .link-text{
+        font-family: Inter, sans-serif;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+
 }
-
-h1 *.accent{
-    color: #0100FF;
-
-    font-family: "Yeseva One";
-    font-size: 3rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 130%; /* 3.9rem */
-}
-
-h2 {
-    font-family: "Yeseva One";
-    font-size: 2.5rem;
-    line-height: 150.3%;
-    letter-spacing: -1%;
-}
-
-h3{
-    font-family: Inter, sans-serif;
-    font-weight: 500;
-    font-size: 1.5rem;
-}
-
-h4 {
-    font-family: "Yeseva One";
-    font-size: 1.875rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-p{
-    font-family: Inter, sans-serif;
-    font-size: 1.125rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-}
-
-.link-text{
-    font-family: Inter, sans-serif;
-    font-weight: 500;
-    font-size: 1rem;
-}
-
